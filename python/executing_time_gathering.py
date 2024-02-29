@@ -29,14 +29,18 @@ def take_times(size, samples_by_size):
         samples.append(data_generator.get_random_list(size))
     return [
         take_time_for_algorithm(samples, lambda arr: algorithms.linear_search(arr, random.randint(0, len(arr) - 1))),
-        take_time_for_algorithm(samples, lambda arr: algorithms.binary_search(arr, random.randint(0, len(arr) - 1), 0,
+        take_time_for_algorithm(order(samples), lambda arr: algorithms.binary_search(arr, random.randint(0, len(arr) - 1), 0,
                                                                               len(arr) - 1)),
         take_time_for_algorithm(samples, lambda arr: algorithms.ternary_search(arr, random.randint(0, len(arr) - 1), 0,
                                                                                len(arr) - 1)),
     ]
 
+# Ordenar arreglos para binario y ter
 
-
+def order(matrix):
+    for array in matrix:
+        array.sort()
+    return matrix
 
 """
     Returns the median of the execution time measures for a sorting approach given in 

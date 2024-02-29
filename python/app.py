@@ -7,8 +7,8 @@ matplotlib.use('TkAgg')
 import pandas as pd
 
 if __name__ == "__main__":
-    minimum_size = 100000
-    maximum_size = 200000
+    minimum_size = 10000
+    maximum_size = 50000
     step = 5000
     samples_by_size = 7
 
